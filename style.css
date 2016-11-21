@@ -44,10 +44,8 @@ h1{
 #main{
   height: 25em;
   width: 21em;
-  /*border: .5em solid black;*/
   margin: 2em auto;
   background: #347cef;
-  /*border-radius: 1em;*/
   z-index: 1;
 
 }
@@ -60,10 +58,12 @@ h1{
   margin-left: 1em;
   z-index: 2;
 }*/
+
 #position-holder{
   margin-top: 2.5em;
   display: inline-block;
 }
+
 /*square positions*/
 .possible-positions{
   height: 4em;
@@ -74,16 +74,8 @@ h1{
   margin: .3em;
   border-radius: 3em;
 }
-/*.positions{
-  background-color: #FFFFFF;
-  height: 4em;
-  width: 4em;
-  border-radius: 3em;
-  z-index: 3;*/
-  /*padding: .1em;
-  margin: .3em;*/
-}
 
+/*game information*/
 p{
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
@@ -91,4 +83,10 @@ p{
 
 hr{
   width: 70%;
+}
+.red{
+  background-color: red;
+}
+.yellow{
+  background-color: yellow;
 }
