@@ -4,12 +4,8 @@ $(function(){
 //grab gameBoard
 var $gameBoard = $("#game-board");
 var $playerTurn = "red";
-
-//coming back as undefined tried to set this up but it's not correct or in the right spot.
 var $posPositions = $(".possible-positions");
-for (var i = 0; i < $posPositions.length; i++){
-  $posPositions.click($play);
-}
+
 //start button
 var $startBtn = $("#start-game");
   $startBtn.on("click", function(){
@@ -30,46 +26,38 @@ var $resetBtn = $("#reset");
 var $play = function(){
     $posPositions.on('click', $checkedClicked);
     console.log("this is the play function");
+    
 };
-
-// $elementClassList = this.classList;
-// console.log("Inside the is the element classList: " + $elementClassList);
 
 //checks if the space has been clicked
 var $checkedClicked = function(){
-  console.log("this is the checkedClicked function");
-  var $theId = $(this).attr("id");
-  console.log("inside the checkedClicked function is the id: " + $theId);
-      if ($theId === ".clicked"){
-        console.log("this is the if statement");
+  // console.log("this is the checkedClicked function");
+  var $theClass = $(this).attr("class");
+  var $that = $(this);
+      // console.log($theClass + " this is the class");
+      if ($theClass === "possible-positions clicked"){
+        // console.log("this is the if statement");
+        // alert("This space is taken, please select another");
       } else {
-        // alert("This space is taken")
         $(this).addClass("clicked");
-        console.log("this is the else statement");
+        // $(this).attr("played", "true");
+        // console.log("this is the else statement");
+        $assignSpace($that);
       }
     }
 
-
-var $assignSpace = function($checkedClicked){
-  console.log("this is the assignSpace function");
-  var $elementClassList = this.classList;
-  console.log("Inside the is the element classList: " + $elementClassList);
-  // $theId = $(this).attr("id");
-  // console.log("inside the checkedClicked function is the id: " + $theId);
-    if ($checkedClicked === "clicked"){
+var $assignSpace = function($that){
+  // console.log("this is the assignSpace function");
       if ($playerTurn === "red"){
         console.log("Hey red");
-        $(this).addClass("red");
+        $that.addClass("red");
         $playerTurn = "yellow";
       } else {
         console.log("Hey yellow");
-        $(this).addClass("yellow");
+        $that.addClass("yellow");
         $playerTurn = "red";
        }
-       $winner();
      }
- };
- // $assignSpace();
 
 
 var $A = $("#A");
@@ -90,24 +78,35 @@ var $O = $("#O");
 var $P = $("#P");
 
 //winning conditions
-var $winner = function($assignSpace){
-  if ($assignSpace === "clicked"){
-   if ($A === $B && $C === $D ||
-       $A === $E && $I === $M ||
-       $A === $F && $K === $P ||
-       $D === $H && $L === $P ||
-       $D === $G && $J === $M ||
-       $M === $N && $O === $P ||
-       $E === $F && $G === $H ||
-       $I === $J && $K === $L ||
-       $B === $F && $J === $N ||
-       $C === $G && $K === $O){
-      alert(" We have a winner"); // need to set up color
-    } else if ($assignSpace !== "clicked"){
-      alert("Please selected another space");
-     }
-    }
-  };
-  // $winner();
+var $winner = function($that){
+  if ($that === "possible-positions clicked red"
+          && $A === $B && $C === $D ||
+             $A === $E && $I === $M ||
+             $A === $F && $K === $P ||
+             $D === $H && $L === $P ||
+             $D === $G && $J === $M ||
+             $M === $N && $O === $P ||
+             $E === $F && $G === $H ||
+             $I === $J && $K === $L ||
+             $B === $F && $J === $N ||
+             $C === $G && $K === $O){
+            alert("Red is the winner");
+          } else if ($that === "possible-positions clicked yellow"
+            && $A === $B && $C === $D ||
+               $A === $E && $I === $M ||
+               $A === $F && $K === $P ||
+               $D === $H && $L === $P ||
+               $D === $G && $J === $M ||
+               $M === $N && $O === $P ||
+               $E === $F && $G === $H ||
+               $I === $J && $K === $L ||
+               $B === $F && $J === $N ||
+               $C === $G && $K === $O){
+              alert("Yellow is the winner");
+         } else {
+              console.log("Next player moves");
+        }
+      }
+  $winner();
 
 });
