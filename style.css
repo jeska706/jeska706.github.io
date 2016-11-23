@@ -1,5 +1,7 @@
 body{
   text-align: center;
+  /*background: url("http://www.publicdomainpictures.net/pictures/70000/velka/old-white-background.jpg");*/
+  color: #000000;
 }
 
 /*nav bar*/
@@ -20,6 +22,7 @@ nav{
   margin: 25em 2em 2em 2.5em;
   border-radius: 3em;
   background-color: #00FF00;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*clear buttons*/
@@ -31,7 +34,7 @@ nav{
   margin: 1em 2em 2em 2.5em;
   border-radius: 3em;
   background-color: #FF0000;
-
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*game name*/
@@ -42,23 +45,15 @@ h1{
 
 /*main div holding gameboard*/
 #main{
-  height: 25em;
-  width: 21em;
+  height: 33em;
+  width: 35em;
   margin: 2em auto;
   background: #347cef;
   z-index: 1;
   border-radius: 1em;
   box-shadow: 10px 5px 5px black;
+  /*background-image: linear-gradient(to right, #0000CC, #0033FF, #0099FF, #FFFFFF, #0099FF, #0000CC);*/
 }
-/*drop in row seletor*/
-/*.selected-row{
-  width: 2.8em;
-  padding: 1em;
-  margin-bottom: .5em;
-  margin-right: 1em;
-  margin-left: 1em;
-  z-index: 2;
-}*/
 
 #position-holder{
   margin-top: 2.5em;
@@ -81,6 +76,7 @@ h1{
 p{
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
+  margin: 2em;
 }
 
 hr{
