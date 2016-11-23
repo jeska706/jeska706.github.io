@@ -34,7 +34,6 @@ var $checkedClicked = function(){
   // console.log("this is the checkedClicked function");
   var $theClass = $(this).attr("class");
   var $that = $(this);
-  console.log($that);
       // console.log($that);
       if ($theClass === "positions clicked"){
         // alert("This space is taken, please select another");
@@ -46,9 +45,6 @@ var $checkedClicked = function(){
     }
 
 var $assignSpace = function($that){
-  // console.log("this is the assignSpace function");
-  var $win = $(this);
-  // console.log($win);
       if ($player === "red"){
         console.log("Hey red");
         $that.addClass("red");
@@ -59,10 +55,9 @@ var $assignSpace = function($that){
         $player = "red";
        }
        $winner($that);
-
      }
 
-
+//individual div id's
 var $A = $("#A");
 var $B = $("#B");
 var $C = $("#C");
@@ -81,32 +76,49 @@ var $O = $("#O");
 var $P = $("#P");
 
 //winning conditions
-var $winner = function($win){
-  console.log("this is the winner function"+ $win);
-  if (($win == "positions.clicked.red")
-          && (($A === $B && $C === $D) ||
-             ($A === $E && $I === $M) ||
-             ($A === $F && $K === $P) ||
-             ($D === $H && $L === $P) ||
-             ($D === $G && $J === $M) ||
-             ($M === $N && $O === $P) ||
-             ($E === $F && $G === $H) ||
-             ($I === $J && $K === $L) ||
-             ($B === $F && $J === $N) ||
-             ($C === $G && $K === $O))){
+var $winner = function(){
+  if($A.hasClass("red") && $B.hasClass("red") &&
+     $C.hasClass("red") && $D.hasClass("red") ||
+     $A.hasClass("red") && $E.hasClass("red") &&
+     $I.hasClass("red") && $M.hasClass("red") ||
+     $A.hasClass("red") && $F.hasClass("red") &&
+     $K.hasClass("red") && $P.hasClass("red") ||
+     $D.hasClass("red") && $H.hasClass("red") &&
+     $L.hasClass("red") && $P.hasClass("red") ||
+     $D.hasClass("red") && $G.hasClass("red") &&
+     $J.hasClass("red") && $M.hasClass("red") ||
+     $M.hasClass("red") && $N.hasClass("red") &&
+     $O.hasClass("red") && $P.hasClass("red") ||
+     $E.hasClass("red") && $F.hasClass("red") &&
+     $G.hasClass("red") && $H.hasClass("red") ||
+     $I.hasClass("red") && $J.hasClass("red") &&
+     $K.hasClass("red") && $L.hasClass("red") ||
+     $B.hasClass("red") && $F.hasClass("red") &&
+     $J.hasClass("red") && $N.hasClass("red") ||
+     $C.hasClass("red") && $G.hasClass("red") &&
+     $K.hasClass("red") && $O.hasClass("red")){
             alert("Red is the winner");
-          } else if (($win == "positions.clicked.yellow")
-            && ($A === $B && $C === $D )||
-               ($A === $E && $I === $M) ||
-               ($A === $F && $K === $P) ||
-               ($D === $H && $L === $P) ||
-               ($D === $G && $J === $M) ||
-               ($M === $N && $O === $P) ||
-               ($E === $F && $G === $H) ||
-               ($I === $J && $K === $L) ||
-               ($B === $F && $J === $N )||
-               ($C === $G && $K === $O)){
-              alert("Yellow is the winner");
+          } else if ($A.hasClass("yellow") && $B.hasClass("yellow") &&
+                     $C.hasClass("yellow") && $D.hasClass("yellow") ||
+                     $A.hasClass("yellow") && $E.hasClass("yellow") &&
+                     $I.hasClass("yellow") && $M.hasClass("yellow") ||
+                     $A.hasClass("yellow") && $F.hasClass("yellow") &&
+                     $K.hasClass("yellow") && $P.hasClass("yellow") ||
+                     $D.hasClass("yellow") && $H.hasClass("yellow") &&
+                     $L.hasClass("yellow") && $P.hasClass("yellow") ||
+                     $D.hasClass("yellow") && $G.hasClass("yellow") &&
+                     $J.hasClass("yellow") && $M.hasClass("yellow") ||
+                     $M.hasClass("yellow") && $N.hasClass("yellow") &&
+                     $O.hasClass("yellow") && $P.hasClass("yellow") ||
+                     $E.hasClass("yellow") && $F.hasClass("yellow") &&
+                     $G.hasClass("yellow") && $H.hasClass("yellow") ||
+                     $I.hasClass("yellow") && $J.hasClass("yellow") &&
+                     $K.hasClass("yellow") && $L.hasClass("yellow") ||
+                     $B.hasClass("yellow") && $F.hasClass("yellow") &&
+                     $J.hasClass("yellow") && $N.hasClass("yellow") ||
+                     $C.hasClass("yellow") && $G.hasClass("yellow") &&
+                     $K.hasClass("yellow") && $O.hasClass("yellow")){
+                          alert("Yellow is the winner");
          } else {
               console.log("Next player moves");
         }
