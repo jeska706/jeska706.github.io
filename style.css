@@ -47,7 +47,8 @@ h1{
   margin: 2em auto;
   background: #347cef;
   z-index: 1;
-
+  border-radius: 1em;
+  box-shadow: 10px 5px 5px black;
 }
 /*drop in row seletor*/
 /*.selected-row{
@@ -65,7 +66,7 @@ h1{
 }
 
 /*square positions*/
-.possible-positions{
+.positions{
   height: 4em;
   width: 4em;
   display: inline-block;
@@ -73,6 +74,7 @@ h1{
   z-index: 2;
   margin: .3em;
   border-radius: 3em;
+  box-shadow: inset .3em .2em .2em black;
 }
 
 /*game information*/
