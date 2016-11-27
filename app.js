@@ -9,17 +9,19 @@ var $positions = $(".positions");
 //start button
 var $startBtn = $("#start-game");
   $startBtn.on("click", function(){
-  // alert("Red plays first");
+  alert("Red plays first");
     console.log("start button clicked");
     $play();
 });
-
+//tried to get button working but it's not returning the correct classes to remove them
 // rest button
-var $resetBtn = $("#reset");
-  $resetBtn.on("click", function(){
-    // $positions.removeClass("click", "red", "yellow");
-    console.log("reset button clicked");
-    alert("Click start for a new game");
+// var $resetBtn = $("#reset");
+//   $resetBtn.on("click", function(){
+//     var $clear = this;
+//     console.log($clear)
+    // $that.removeClass("clicked", "red", "yellow");
+    // console.log("This is the class: " + $that);
+    // alert("Click start for a new game");
 });
 
 //on click function
