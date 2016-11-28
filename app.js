@@ -22,7 +22,7 @@ var $startBtn = $("#start-game");
     // $that.removeClass("clicked", "red", "yellow");
     // console.log("This is the class: " + $that);
     // alert("Click start for a new game");
-});
+// });
 
 //on click function
 var $play = function(){
